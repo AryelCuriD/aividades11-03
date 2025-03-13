@@ -1,27 +1,26 @@
 let compra = [];
 
-function adicionarValor(valor) {
+function adicionarValor(valor, compra) {
     compra.push(valor);
 }
 
-function removerValor(valor) {
-    return compra = compra.filter(item => item !== valor);
+function removerValor(valor, compra) {
+    return compra.filter(item => item !== valor);
 }
 
-function calcularTotal() {
+function calcularTotal(compra) {
     return compra.reduce((total, preco) => total + preco, 0);
 }
 
-adicionarValor(10.50);
-adicionarValor(5.20);
-adicionarValor(3.75);
+adicionarValor(10.50, compra);
+adicionarValor(5.20, compra);
+adicionarValor(3.75, compra);
+adicionarValor(4.75, compra);
 
 console.log(compra);
 
-removerValor(5.20);
+compra = removerValor(5.20, compra);
 
 console.log(compra);
 
-console.log("Total da compra:", calcularTotal());
-
-
+console.log("Total da compra:", calcularTotal(compra));
